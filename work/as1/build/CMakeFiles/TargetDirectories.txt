@@ -1,0 +1,8 @@
+/home/brian/all-my-code/CMPT433-Code/04-Building/cmake_starter/build/CMakeFiles/rebuild_cache.dir
+/home/brian/all-my-code/CMPT433-Code/04-Building/cmake_starter/build/CMakeFiles/edit_cache.dir
+/home/brian/all-my-code/CMPT433-Code/04-Building/cmake_starter/build/hal/CMakeFiles/rebuild_cache.dir
+/home/brian/all-my-code/CMPT433-Code/04-Building/cmake_starter/build/hal/CMakeFiles/edit_cache.dir
+/home/brian/all-my-code/CMPT433-Code/04-Building/cmake_starter/build/hal/CMakeFiles/hal.dir
+/home/brian/all-my-code/CMPT433-Code/04-Building/cmake_starter/build/app/CMakeFiles/rebuild_cache.dir
+/home/brian/all-my-code/CMPT433-Code/04-Building/cmake_starter/build/app/CMakeFiles/edit_cache.dir
+/home/brian/all-my-code/CMPT433-Code/04-Building/cmake_starter/build/app/CMakeFiles/hello_world.dir

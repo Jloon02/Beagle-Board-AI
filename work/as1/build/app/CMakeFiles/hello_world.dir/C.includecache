@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../app/include/badmath.h
+
+../hal/include/hal/button.h
+stdbool.h
+-
+
+/home/brian/all-my-code/CMPT433-Code/04-Building/cmake_starter/app/src/badmath.c
+badmath.h
+/home/brian/all-my-code/CMPT433-Code/04-Building/cmake_starter/app/src/badmath.h
+
+/home/brian/all-my-code/CMPT433-Code/04-Building/cmake_starter/app/src/main.c
+stdio.h
+-
+stdbool.h
+-
+badmath.h
+/home/brian/all-my-code/CMPT433-Code/04-Building/cmake_starter/app/src/badmath.h
+hal/button.h
+/home/brian/all-my-code/CMPT433-Code/04-Building/cmake_starter/app/src/hal/button.h
+
