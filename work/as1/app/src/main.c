@@ -1,57 +1,56 @@
 // Main program to build the application
-// Has main(); does initialization and cleanup and perhaps some basic logic.
 
 #include <stdio.h>
 #include <stdbool.h>
 #include "badmath.h"
 #include "hal/button.h"
+#include "hal/joystick.h"
+#include "hal/LED.h"
 
-void foo() {
-    int data[3];    
-    for (int i = 0; i <= 3; i++) {
-        data[i] = 10;
-        printf("Value: %d\n", data[i]);
+void led_trigger()
+{
+    const char *led = "ACT";
+
+    // Set LED to none (direct control)
+    set_led_trigger(led, "none");
+
+    // Blink LED 5 times
+    for (int i = 0; i < 5; i++) {
+        set_led_brightness(led, 1);  // Turn on
+        sleep_for(0.5);             // Wait 0.5 seconds
+        set_led_brightness(led, 0); // Turn off
+        sleep_for(0.5);             // Wait 0.5 seconds
     }
+
+    // Restore LED to none mode
+    set_led_trigger(led, "none");
 }
 
 int main()
 {
-    printf("Hello world!\n");
+	printf("Read TLA2024 ADC\n");
 
-    // Initialize all modules; HAL modules first
-    button_init();
-    badmath_init();
+	int i2c_file_desc = init_i2c_bus(I2CDRV_LINUX_BUS, I2C_DEVICE_ADDRESS);
 
-    // Main program logic:
-    for (int i = 0; i < 10; i++) {
-        printf("  -> Reading button time %d = %d\n", i, button_is_button_pressed());
-    }
+	// Select the channel
+	write_i2c_reg16(i2c_file_desc, REG_CONFIGURATION, SELECTED_CHANNEL_CONF);
 
-    for (int i = 0; i <= 35; i++) {
-        int ans = badmath_factorial(i);
-        printf("%4d! = %6d\n", i, ans);
-    }
+	while(true) {
 
-    // Cleanup all modules (HAL modules last)
-    badmath_cleanup();
-    button_cleanup();
+		// Read a register:
+		uint16_t raw_read = read_i2c_reg16(i2c_file_desc, REG_DATA);
+        printf("Raw reading: 0x%04x\n", raw_read);
+	
+		// Convert byte order and shift bits into place
+		uint16_t value = ((raw_read & 0xFF) << 8) | ((raw_read & 0xFF00) >> 8);
+		value  = value >> 4;
 
-    printf("!!! DONE !!!\n"); 
+		printf("Raw Read: 0x%04x  -->  Reorder & shift: 0x%04x = %8d\n", raw_read, value, value);		
+		// sleep(1);
 
-    // Some bad code to try out and see what shows up.
-    #if 0
-        // Test your linting setup
-        //   - You should see a warning underline in VS Code
-        //   - You should see compile-time errors when building (-Wall -Werror)
-        // (Linting using clang-tidy; see )
-        int x = 0;
-        if (x = 10) {
-        }
-    #endif
-    #if 1
-        // Demonstrate -fsanitize=address (enabled in the root CMakeFiles.txt)
-        // Compile and run this code. Should see warning at compile time; error at runtime.
-        foo();
+	}
 
-    #endif
+	// Cleanup I2C access;
+	close(i2c_file_desc);
+	return 0;
 }

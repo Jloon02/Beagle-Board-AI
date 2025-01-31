@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/hello_world.dir/src/badmath.c.o"
+  "CMakeFiles/hello_world.dir/src/badmath.c.o.d"
   "CMakeFiles/hello_world.dir/src/main.c.o"
+  "CMakeFiles/hello_world.dir/src/main.c.o.d"
   "hello_world"
   "hello_world.pdb"
 )

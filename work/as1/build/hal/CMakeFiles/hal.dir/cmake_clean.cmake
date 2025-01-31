@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/hal.dir/src/button.c.o"
+  "CMakeFiles/hal.dir/src/button.c.o.d"
   "libhal.a"
   "libhal.pdb"
 )
