@@ -32,6 +32,7 @@ static void flash_red() {
 	}
 }
 
+// For testing Purposes
 void test() {
 	printf("testing..\n");
 	joystick_init();
@@ -59,6 +60,7 @@ void test() {
 	}
 }
 
+// Main Game Loop
 void reaction_game_run()
 {
 	srand(time(NULL));
@@ -93,6 +95,10 @@ void reaction_game_run()
 		// If user presses too soon, restart
 		if(joystick_get_direction() != JOYSTICK_NONE) {
 			printf("Too soon!!\n");
+			if(joystick_get_direction() == JOYSTICK_LEFT || joystick_get_direction() == JOYSTICK_RIGHT) {
+				printf("User selected to quit.\n");
+				break;
+			}
 			continue;
 		}
 
