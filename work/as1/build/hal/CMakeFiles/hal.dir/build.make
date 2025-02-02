@@ -69,10 +69,24 @@ include hal/CMakeFiles/hal.dir/progress.make
 # Include the compile flags for this target's objects.
 include hal/CMakeFiles/hal.dir/flags.make
 
+hal/CMakeFiles/hal.dir/src/LED.c.o: hal/CMakeFiles/hal.dir/flags.make
+hal/CMakeFiles/hal.dir/src/LED.c.o: /home/josh/cmpt433/work/as1/hal/src/LED.c
+hal/CMakeFiles/hal.dir/src/LED.c.o: hal/CMakeFiles/hal.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/josh/cmpt433/work/as1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object hal/CMakeFiles/hal.dir/src/LED.c.o"
+	cd /home/josh/cmpt433/work/as1/build/hal && /usr/bin/aarch64-linux-gnu-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT hal/CMakeFiles/hal.dir/src/LED.c.o -MF CMakeFiles/hal.dir/src/LED.c.o.d -o CMakeFiles/hal.dir/src/LED.c.o -c /home/josh/cmpt433/work/as1/hal/src/LED.c
+
+hal/CMakeFiles/hal.dir/src/LED.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/hal.dir/src/LED.c.i"
+	cd /home/josh/cmpt433/work/as1/build/hal && /usr/bin/aarch64-linux-gnu-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/josh/cmpt433/work/as1/hal/src/LED.c > CMakeFiles/hal.dir/src/LED.c.i
+
+hal/CMakeFiles/hal.dir/src/LED.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/hal.dir/src/LED.c.s"
+	cd /home/josh/cmpt433/work/as1/build/hal && /usr/bin/aarch64-linux-gnu-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/josh/cmpt433/work/as1/hal/src/LED.c -o CMakeFiles/hal.dir/src/LED.c.s
+
 hal/CMakeFiles/hal.dir/src/button.c.o: hal/CMakeFiles/hal.dir/flags.make
 hal/CMakeFiles/hal.dir/src/button.c.o: /home/josh/cmpt433/work/as1/hal/src/button.c
 hal/CMakeFiles/hal.dir/src/button.c.o: hal/CMakeFiles/hal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/josh/cmpt433/work/as1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object hal/CMakeFiles/hal.dir/src/button.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/josh/cmpt433/work/as1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object hal/CMakeFiles/hal.dir/src/button.c.o"
 	cd /home/josh/cmpt433/work/as1/build/hal && /usr/bin/aarch64-linux-gnu-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT hal/CMakeFiles/hal.dir/src/button.c.o -MF CMakeFiles/hal.dir/src/button.c.o.d -o CMakeFiles/hal.dir/src/button.c.o -c /home/josh/cmpt433/work/as1/hal/src/button.c
 
 hal/CMakeFiles/hal.dir/src/button.c.i: cmake_force
@@ -83,17 +97,35 @@ hal/CMakeFiles/hal.dir/src/button.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/hal.dir/src/button.c.s"
 	cd /home/josh/cmpt433/work/as1/build/hal && /usr/bin/aarch64-linux-gnu-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/josh/cmpt433/work/as1/hal/src/button.c -o CMakeFiles/hal.dir/src/button.c.s
 
+hal/CMakeFiles/hal.dir/src/joystick.c.o: hal/CMakeFiles/hal.dir/flags.make
+hal/CMakeFiles/hal.dir/src/joystick.c.o: /home/josh/cmpt433/work/as1/hal/src/joystick.c
+hal/CMakeFiles/hal.dir/src/joystick.c.o: hal/CMakeFiles/hal.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/josh/cmpt433/work/as1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object hal/CMakeFiles/hal.dir/src/joystick.c.o"
+	cd /home/josh/cmpt433/work/as1/build/hal && /usr/bin/aarch64-linux-gnu-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT hal/CMakeFiles/hal.dir/src/joystick.c.o -MF CMakeFiles/hal.dir/src/joystick.c.o.d -o CMakeFiles/hal.dir/src/joystick.c.o -c /home/josh/cmpt433/work/as1/hal/src/joystick.c
+
+hal/CMakeFiles/hal.dir/src/joystick.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/hal.dir/src/joystick.c.i"
+	cd /home/josh/cmpt433/work/as1/build/hal && /usr/bin/aarch64-linux-gnu-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/josh/cmpt433/work/as1/hal/src/joystick.c > CMakeFiles/hal.dir/src/joystick.c.i
+
+hal/CMakeFiles/hal.dir/src/joystick.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/hal.dir/src/joystick.c.s"
+	cd /home/josh/cmpt433/work/as1/build/hal && /usr/bin/aarch64-linux-gnu-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/josh/cmpt433/work/as1/hal/src/joystick.c -o CMakeFiles/hal.dir/src/joystick.c.s
+
 # Object files for target hal
 hal_OBJECTS = \
-"CMakeFiles/hal.dir/src/button.c.o"
+"CMakeFiles/hal.dir/src/LED.c.o" \
+"CMakeFiles/hal.dir/src/button.c.o" \
+"CMakeFiles/hal.dir/src/joystick.c.o"
 
 # External object files for target hal
 hal_EXTERNAL_OBJECTS =
 
+hal/libhal.a: hal/CMakeFiles/hal.dir/src/LED.c.o
 hal/libhal.a: hal/CMakeFiles/hal.dir/src/button.c.o
+hal/libhal.a: hal/CMakeFiles/hal.dir/src/joystick.c.o
 hal/libhal.a: hal/CMakeFiles/hal.dir/build.make
 hal/libhal.a: hal/CMakeFiles/hal.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/josh/cmpt433/work/as1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libhal.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/josh/cmpt433/work/as1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C static library libhal.a"
 	cd /home/josh/cmpt433/work/as1/build/hal && $(CMAKE_COMMAND) -P CMakeFiles/hal.dir/cmake_clean_target.cmake
 	cd /home/josh/cmpt433/work/as1/build/hal && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hal.dir/link.txt --verbose=$(VERBOSE)
 

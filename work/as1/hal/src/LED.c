@@ -1,5 +1,21 @@
 #include "hal/LED.h"
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <stdbool.h>
+
+// LED control file paths
+#define TRIGGER_FILE_NAME "/sys/class/leds/ACT/trigger"
+#define BRIGHTNESS_FILE_NAME "/sys/class/leds/ACT/brightness"
+
+static bool led_initialized = false;
+
+void led_init(void) {
+    led_initialized = true;
+}
+
+
 void set_led_trigger(const char *led_name, const char *trigger) {
     FILE *file = fopen(TRIGGER_FILE_NAME, "w");
 

@@ -130,30 +130,6 @@ reaction_timer/fast:
 	cd /home/josh/cmpt433/work/as1/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/reaction_timer.dir/build.make app/CMakeFiles/reaction_timer.dir/build
 .PHONY : reaction_timer/fast
 
-src/badmath.o: src/badmath.c.o
-.PHONY : src/badmath.o
-
-# target to build an object file
-src/badmath.c.o:
-	cd /home/josh/cmpt433/work/as1/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/reaction_timer.dir/build.make app/CMakeFiles/reaction_timer.dir/src/badmath.c.o
-.PHONY : src/badmath.c.o
-
-src/badmath.i: src/badmath.c.i
-.PHONY : src/badmath.i
-
-# target to preprocess a source file
-src/badmath.c.i:
-	cd /home/josh/cmpt433/work/as1/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/reaction_timer.dir/build.make app/CMakeFiles/reaction_timer.dir/src/badmath.c.i
-.PHONY : src/badmath.c.i
-
-src/badmath.s: src/badmath.c.s
-.PHONY : src/badmath.s
-
-# target to generate assembly for a file
-src/badmath.c.s:
-	cd /home/josh/cmpt433/work/as1/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/reaction_timer.dir/build.make app/CMakeFiles/reaction_timer.dir/src/badmath.c.s
-.PHONY : src/badmath.c.s
-
 src/main.o: src/main.c.o
 .PHONY : src/main.o
 
@@ -187,9 +163,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... reaction_timer"
-	@echo "... src/badmath.o"
-	@echo "... src/badmath.i"
-	@echo "... src/badmath.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

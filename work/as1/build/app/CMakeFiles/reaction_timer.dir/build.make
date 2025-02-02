@@ -69,24 +69,10 @@ include app/CMakeFiles/reaction_timer.dir/progress.make
 # Include the compile flags for this target's objects.
 include app/CMakeFiles/reaction_timer.dir/flags.make
 
-app/CMakeFiles/reaction_timer.dir/src/badmath.c.o: app/CMakeFiles/reaction_timer.dir/flags.make
-app/CMakeFiles/reaction_timer.dir/src/badmath.c.o: /home/josh/cmpt433/work/as1/app/src/badmath.c
-app/CMakeFiles/reaction_timer.dir/src/badmath.c.o: app/CMakeFiles/reaction_timer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/josh/cmpt433/work/as1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object app/CMakeFiles/reaction_timer.dir/src/badmath.c.o"
-	cd /home/josh/cmpt433/work/as1/build/app && /usr/bin/aarch64-linux-gnu-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT app/CMakeFiles/reaction_timer.dir/src/badmath.c.o -MF CMakeFiles/reaction_timer.dir/src/badmath.c.o.d -o CMakeFiles/reaction_timer.dir/src/badmath.c.o -c /home/josh/cmpt433/work/as1/app/src/badmath.c
-
-app/CMakeFiles/reaction_timer.dir/src/badmath.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/reaction_timer.dir/src/badmath.c.i"
-	cd /home/josh/cmpt433/work/as1/build/app && /usr/bin/aarch64-linux-gnu-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/josh/cmpt433/work/as1/app/src/badmath.c > CMakeFiles/reaction_timer.dir/src/badmath.c.i
-
-app/CMakeFiles/reaction_timer.dir/src/badmath.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/reaction_timer.dir/src/badmath.c.s"
-	cd /home/josh/cmpt433/work/as1/build/app && /usr/bin/aarch64-linux-gnu-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/josh/cmpt433/work/as1/app/src/badmath.c -o CMakeFiles/reaction_timer.dir/src/badmath.c.s
-
 app/CMakeFiles/reaction_timer.dir/src/main.c.o: app/CMakeFiles/reaction_timer.dir/flags.make
 app/CMakeFiles/reaction_timer.dir/src/main.c.o: /home/josh/cmpt433/work/as1/app/src/main.c
 app/CMakeFiles/reaction_timer.dir/src/main.c.o: app/CMakeFiles/reaction_timer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/josh/cmpt433/work/as1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object app/CMakeFiles/reaction_timer.dir/src/main.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/josh/cmpt433/work/as1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object app/CMakeFiles/reaction_timer.dir/src/main.c.o"
 	cd /home/josh/cmpt433/work/as1/build/app && /usr/bin/aarch64-linux-gnu-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT app/CMakeFiles/reaction_timer.dir/src/main.c.o -MF CMakeFiles/reaction_timer.dir/src/main.c.o.d -o CMakeFiles/reaction_timer.dir/src/main.c.o -c /home/josh/cmpt433/work/as1/app/src/main.c
 
 app/CMakeFiles/reaction_timer.dir/src/main.c.i: cmake_force
@@ -99,18 +85,16 @@ app/CMakeFiles/reaction_timer.dir/src/main.c.s: cmake_force
 
 # Object files for target reaction_timer
 reaction_timer_OBJECTS = \
-"CMakeFiles/reaction_timer.dir/src/badmath.c.o" \
 "CMakeFiles/reaction_timer.dir/src/main.c.o"
 
 # External object files for target reaction_timer
 reaction_timer_EXTERNAL_OBJECTS =
 
-app/reaction_timer: app/CMakeFiles/reaction_timer.dir/src/badmath.c.o
 app/reaction_timer: app/CMakeFiles/reaction_timer.dir/src/main.c.o
 app/reaction_timer: app/CMakeFiles/reaction_timer.dir/build.make
 app/reaction_timer: hal/libhal.a
 app/reaction_timer: app/CMakeFiles/reaction_timer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/josh/cmpt433/work/as1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable reaction_timer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/josh/cmpt433/work/as1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable reaction_timer"
 	cd /home/josh/cmpt433/work/as1/build/app && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/reaction_timer.dir/link.txt --verbose=$(VERBOSE)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Copying ARM executable to public NFS directory"
 	cd /home/josh/cmpt433/work/as1/build/app && /usr/bin/cmake -E copy /home/josh/cmpt433/work/as1/build/app/reaction_timer ~/cmpt433/public/myApps/reaction_timer

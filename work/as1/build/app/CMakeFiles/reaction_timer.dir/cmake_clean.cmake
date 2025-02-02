@@ -1,6 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/reaction_timer.dir/src/badmath.c.o"
-  "CMakeFiles/reaction_timer.dir/src/badmath.c.o.d"
   "CMakeFiles/reaction_timer.dir/src/main.c.o"
   "CMakeFiles/reaction_timer.dir/src/main.c.o.d"
   "reaction_timer"

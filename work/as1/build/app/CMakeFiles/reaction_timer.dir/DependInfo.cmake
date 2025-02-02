@@ -8,7 +8,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/josh/cmpt433/work/as1/app/src/badmath.c" "app/CMakeFiles/reaction_timer.dir/src/badmath.c.o" "gcc" "app/CMakeFiles/reaction_timer.dir/src/badmath.c.o.d"
   "/home/josh/cmpt433/work/as1/app/src/main.c" "app/CMakeFiles/reaction_timer.dir/src/main.c.o" "gcc" "app/CMakeFiles/reaction_timer.dir/src/main.c.o.d"
   )
 

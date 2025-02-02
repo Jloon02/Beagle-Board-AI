@@ -8,7 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/josh/cmpt433/work/as1/hal/src/LED.c" "hal/CMakeFiles/hal.dir/src/LED.c.o" "gcc" "hal/CMakeFiles/hal.dir/src/LED.c.o.d"
   "/home/josh/cmpt433/work/as1/hal/src/button.c" "hal/CMakeFiles/hal.dir/src/button.c.o" "gcc" "hal/CMakeFiles/hal.dir/src/button.c.o.d"
+  "/home/josh/cmpt433/work/as1/hal/src/joystick.c" "hal/CMakeFiles/hal.dir/src/joystick.c.o" "gcc" "hal/CMakeFiles/hal.dir/src/joystick.c.o.d"
   )
 
 # Targets to which this target links.

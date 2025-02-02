@@ -130,6 +130,30 @@ hal/fast:
 	cd /home/josh/cmpt433/work/as1/build && $(MAKE) $(MAKESILENT) -f hal/CMakeFiles/hal.dir/build.make hal/CMakeFiles/hal.dir/build
 .PHONY : hal/fast
 
+src/LED.o: src/LED.c.o
+.PHONY : src/LED.o
+
+# target to build an object file
+src/LED.c.o:
+	cd /home/josh/cmpt433/work/as1/build && $(MAKE) $(MAKESILENT) -f hal/CMakeFiles/hal.dir/build.make hal/CMakeFiles/hal.dir/src/LED.c.o
+.PHONY : src/LED.c.o
+
+src/LED.i: src/LED.c.i
+.PHONY : src/LED.i
+
+# target to preprocess a source file
+src/LED.c.i:
+	cd /home/josh/cmpt433/work/as1/build && $(MAKE) $(MAKESILENT) -f hal/CMakeFiles/hal.dir/build.make hal/CMakeFiles/hal.dir/src/LED.c.i
+.PHONY : src/LED.c.i
+
+src/LED.s: src/LED.c.s
+.PHONY : src/LED.s
+
+# target to generate assembly for a file
+src/LED.c.s:
+	cd /home/josh/cmpt433/work/as1/build && $(MAKE) $(MAKESILENT) -f hal/CMakeFiles/hal.dir/build.make hal/CMakeFiles/hal.dir/src/LED.c.s
+.PHONY : src/LED.c.s
+
 src/button.o: src/button.c.o
 .PHONY : src/button.o
 
@@ -154,6 +178,30 @@ src/button.c.s:
 	cd /home/josh/cmpt433/work/as1/build && $(MAKE) $(MAKESILENT) -f hal/CMakeFiles/hal.dir/build.make hal/CMakeFiles/hal.dir/src/button.c.s
 .PHONY : src/button.c.s
 
+src/joystick.o: src/joystick.c.o
+.PHONY : src/joystick.o
+
+# target to build an object file
+src/joystick.c.o:
+	cd /home/josh/cmpt433/work/as1/build && $(MAKE) $(MAKESILENT) -f hal/CMakeFiles/hal.dir/build.make hal/CMakeFiles/hal.dir/src/joystick.c.o
+.PHONY : src/joystick.c.o
+
+src/joystick.i: src/joystick.c.i
+.PHONY : src/joystick.i
+
+# target to preprocess a source file
+src/joystick.c.i:
+	cd /home/josh/cmpt433/work/as1/build && $(MAKE) $(MAKESILENT) -f hal/CMakeFiles/hal.dir/build.make hal/CMakeFiles/hal.dir/src/joystick.c.i
+.PHONY : src/joystick.c.i
+
+src/joystick.s: src/joystick.c.s
+.PHONY : src/joystick.s
+
+# target to generate assembly for a file
+src/joystick.c.s:
+	cd /home/josh/cmpt433/work/as1/build && $(MAKE) $(MAKESILENT) -f hal/CMakeFiles/hal.dir/build.make hal/CMakeFiles/hal.dir/src/joystick.c.s
+.PHONY : src/joystick.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -163,9 +211,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... hal"
+	@echo "... src/LED.o"
+	@echo "... src/LED.i"
+	@echo "... src/LED.s"
 	@echo "... src/button.o"
 	@echo "... src/button.i"
 	@echo "... src/button.s"
+	@echo "... src/joystick.o"
+	@echo "... src/joystick.i"
+	@echo "... src/joystick.s"
 .PHONY : help
 
 
