@@ -1,6 +1,7 @@
-app/CMakeFiles/hello_world.dir/src/main.c.o: \
+app/CMakeFiles/reaction_timer.dir/src/main.c.o: \
  /home/josh/cmpt433/work/as1/app/src/main.c \
  /usr/aarch64-linux-gnu/include/stdc-predef.h \
+ /home/josh/cmpt433/work/as1/app/include/reaction_game.h \
  /usr/aarch64-linux-gnu/include/stdio.h \
  /usr/aarch64-linux-gnu/include/bits/libc-header-start.h \
  /usr/aarch64-linux-gnu/include/features.h \
@@ -24,7 +25,4 @@ app/CMakeFiles/hello_world.dir/src/main.c.o: \
  /usr/aarch64-linux-gnu/include/bits/types/struct_FILE.h \
  /usr/aarch64-linux-gnu/include/bits/stdio_lim.h \
  /usr/aarch64-linux-gnu/include/bits/floatn.h \
- /usr/aarch64-linux-gnu/include/bits/floatn-common.h \
- /usr/lib/gcc-cross/aarch64-linux-gnu/12/include/stdbool.h \
- /home/josh/cmpt433/work/as1/app/include/badmath.h \
- /home/josh/cmpt433/work/as1/hal/include/hal/button.h
+ /usr/aarch64-linux-gnu/include/bits/floatn-common.h

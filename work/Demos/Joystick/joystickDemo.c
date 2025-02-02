@@ -27,7 +27,7 @@
 #define TLA2024_CHANNEL_CONF_3 0x83F2
 
 // Which channel to sample?
-#define SELECTED_CHANNEL_CONF TLA2024_CHANNEL_CONF_0
+#define SELECTED_CHANNEL_CONF TLA2024_CHANNEL_CONF_1
 
 static int init_i2c_bus(char* bus, int address);
 static void write_i2c_reg16(int i2c_file_desc, uint8_t reg_addr, uint16_t value);

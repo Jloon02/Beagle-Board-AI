@@ -154,30 +154,6 @@ src/LED.c.s:
 	cd /home/josh/cmpt433/work/as1/build && $(MAKE) $(MAKESILENT) -f hal/CMakeFiles/hal.dir/build.make hal/CMakeFiles/hal.dir/src/LED.c.s
 .PHONY : src/LED.c.s
 
-src/button.o: src/button.c.o
-.PHONY : src/button.o
-
-# target to build an object file
-src/button.c.o:
-	cd /home/josh/cmpt433/work/as1/build && $(MAKE) $(MAKESILENT) -f hal/CMakeFiles/hal.dir/build.make hal/CMakeFiles/hal.dir/src/button.c.o
-.PHONY : src/button.c.o
-
-src/button.i: src/button.c.i
-.PHONY : src/button.i
-
-# target to preprocess a source file
-src/button.c.i:
-	cd /home/josh/cmpt433/work/as1/build && $(MAKE) $(MAKESILENT) -f hal/CMakeFiles/hal.dir/build.make hal/CMakeFiles/hal.dir/src/button.c.i
-.PHONY : src/button.c.i
-
-src/button.s: src/button.c.s
-.PHONY : src/button.s
-
-# target to generate assembly for a file
-src/button.c.s:
-	cd /home/josh/cmpt433/work/as1/build && $(MAKE) $(MAKESILENT) -f hal/CMakeFiles/hal.dir/build.make hal/CMakeFiles/hal.dir/src/button.c.s
-.PHONY : src/button.c.s
-
 src/joystick.o: src/joystick.c.o
 .PHONY : src/joystick.o
 
@@ -214,9 +190,6 @@ help:
 	@echo "... src/LED.o"
 	@echo "... src/LED.i"
 	@echo "... src/LED.s"
-	@echo "... src/button.o"
-	@echo "... src/button.i"
-	@echo "... src/button.s"
 	@echo "... src/joystick.o"
 	@echo "... src/joystick.i"
 	@echo "... src/joystick.s"

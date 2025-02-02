@@ -6,5 +6,5 @@ C_DEFINES =
 
 C_INCLUDES = -I/home/josh/cmpt433/work/as1/app/include -I/home/josh/cmpt433/work/as1/hal/include
 
-C_FLAGS = -g -Wall -Werror -Wpedantic -Wextra -fdiagnostics-color -pthread -std=gnu11
+C_FLAGS = -g -Wall -Wpedantic -Wextra -fdiagnostics-color -pthread -std=gnu11
 

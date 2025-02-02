@@ -1,1 +1,1 @@
-/usr/bin/aarch64-linux-gnu-gcc -g -pthread CMakeFiles/reaction_timer.dir/src/main.c.o -o reaction_timer  ../hal/libhal.a 
+/usr/bin/aarch64-linux-gnu-gcc -g -pthread CMakeFiles/reaction_timer.dir/src/main.c.o CMakeFiles/reaction_timer.dir/src/reaction_game.c.o CMakeFiles/reaction_timer.dir/src/time_functions.c.o -o reaction_timer  ../hal/libhal.a 

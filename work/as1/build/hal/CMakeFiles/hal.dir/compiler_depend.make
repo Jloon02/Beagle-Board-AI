@@ -4,70 +4,9 @@
 hal/CMakeFiles/hal.dir/src/LED.c.o: /home/josh/cmpt433/work/as1/hal/src/LED.c \
   /usr/aarch64-linux-gnu/include/stdc-predef.h \
   /home/josh/cmpt433/work/as1/hal/include/hal/LED.h \
-  /usr/aarch64-linux-gnu/include/stdio.h \
-  /usr/aarch64-linux-gnu/include/bits/libc-header-start.h \
-  /usr/aarch64-linux-gnu/include/features.h \
-  /usr/aarch64-linux-gnu/include/features-time64.h \
-  /usr/aarch64-linux-gnu/include/bits/wordsize.h \
-  /usr/aarch64-linux-gnu/include/bits/timesize.h \
-  /usr/aarch64-linux-gnu/include/sys/cdefs.h \
-  /usr/aarch64-linux-gnu/include/bits/long-double.h \
-  /usr/aarch64-linux-gnu/include/gnu/stubs.h \
-  /usr/aarch64-linux-gnu/include/gnu/stubs-lp64.h \
-  /usr/lib/gcc-cross/aarch64-linux-gnu/12/include/stddef.h \
-  /usr/lib/gcc-cross/aarch64-linux-gnu/12/include/stdarg.h \
-  /usr/aarch64-linux-gnu/include/bits/types.h \
-  /usr/aarch64-linux-gnu/include/bits/typesizes.h \
-  /usr/aarch64-linux-gnu/include/bits/time64.h \
-  /usr/aarch64-linux-gnu/include/bits/types/__fpos_t.h \
-  /usr/aarch64-linux-gnu/include/bits/types/__mbstate_t.h \
-  /usr/aarch64-linux-gnu/include/bits/types/__fpos64_t.h \
-  /usr/aarch64-linux-gnu/include/bits/types/__FILE.h \
-  /usr/aarch64-linux-gnu/include/bits/types/FILE.h \
-  /usr/aarch64-linux-gnu/include/bits/types/struct_FILE.h \
-  /usr/aarch64-linux-gnu/include/bits/stdio_lim.h \
-  /usr/aarch64-linux-gnu/include/bits/floatn.h \
-  /usr/aarch64-linux-gnu/include/bits/floatn-common.h \
-  /usr/aarch64-linux-gnu/include/stdlib.h \
-  /usr/aarch64-linux-gnu/include/bits/waitflags.h \
-  /usr/aarch64-linux-gnu/include/bits/waitstatus.h \
-  /usr/aarch64-linux-gnu/include/sys/types.h \
-  /usr/aarch64-linux-gnu/include/bits/types/clock_t.h \
-  /usr/aarch64-linux-gnu/include/bits/types/clockid_t.h \
-  /usr/aarch64-linux-gnu/include/bits/types/time_t.h \
-  /usr/aarch64-linux-gnu/include/bits/types/timer_t.h \
-  /usr/aarch64-linux-gnu/include/bits/stdint-intn.h \
-  /usr/aarch64-linux-gnu/include/endian.h \
-  /usr/aarch64-linux-gnu/include/bits/endian.h \
-  /usr/aarch64-linux-gnu/include/bits/endianness.h \
-  /usr/aarch64-linux-gnu/include/bits/byteswap.h \
-  /usr/aarch64-linux-gnu/include/bits/uintn-identity.h \
-  /usr/aarch64-linux-gnu/include/sys/select.h \
-  /usr/aarch64-linux-gnu/include/bits/select.h \
-  /usr/aarch64-linux-gnu/include/bits/types/sigset_t.h \
-  /usr/aarch64-linux-gnu/include/bits/types/__sigset_t.h \
-  /usr/aarch64-linux-gnu/include/bits/types/struct_timeval.h \
-  /usr/aarch64-linux-gnu/include/bits/types/struct_timespec.h \
-  /usr/aarch64-linux-gnu/include/bits/pthreadtypes.h \
-  /usr/aarch64-linux-gnu/include/bits/thread-shared-types.h \
-  /usr/aarch64-linux-gnu/include/bits/pthreadtypes-arch.h \
-  /usr/aarch64-linux-gnu/include/bits/atomic_wide_counter.h \
-  /usr/aarch64-linux-gnu/include/bits/struct_mutex.h \
-  /usr/aarch64-linux-gnu/include/bits/struct_rwlock.h \
-  /usr/aarch64-linux-gnu/include/alloca.h \
-  /usr/aarch64-linux-gnu/include/bits/stdlib-float.h \
-  /usr/aarch64-linux-gnu/include/time.h \
-  /usr/aarch64-linux-gnu/include/bits/time.h \
-  /usr/aarch64-linux-gnu/include/bits/types/struct_tm.h \
-  /usr/aarch64-linux-gnu/include/bits/types/struct_itimerspec.h \
-  /usr/aarch64-linux-gnu/include/bits/types/locale_t.h \
-  /usr/aarch64-linux-gnu/include/bits/types/__locale_t.h
-
-hal/CMakeFiles/hal.dir/src/button.c.o: /home/josh/cmpt433/work/as1/hal/src/button.c \
-  /usr/aarch64-linux-gnu/include/stdc-predef.h \
-  /home/josh/cmpt433/work/as1/hal/include/hal/button.h \
   /usr/lib/gcc-cross/aarch64-linux-gnu/12/include/stdbool.h \
-  /usr/aarch64-linux-gnu/include/assert.h \
+  /usr/aarch64-linux-gnu/include/stdio.h \
+  /usr/aarch64-linux-gnu/include/bits/libc-header-start.h \
   /usr/aarch64-linux-gnu/include/features.h \
   /usr/aarch64-linux-gnu/include/features-time64.h \
   /usr/aarch64-linux-gnu/include/bits/wordsize.h \
@@ -76,8 +15,6 @@ hal/CMakeFiles/hal.dir/src/button.c.o: /home/josh/cmpt433/work/as1/hal/src/butto
   /usr/aarch64-linux-gnu/include/bits/long-double.h \
   /usr/aarch64-linux-gnu/include/gnu/stubs.h \
   /usr/aarch64-linux-gnu/include/gnu/stubs-lp64.h \
-  /usr/aarch64-linux-gnu/include/stdio.h \
-  /usr/aarch64-linux-gnu/include/bits/libc-header-start.h \
   /usr/lib/gcc-cross/aarch64-linux-gnu/12/include/stddef.h \
   /usr/lib/gcc-cross/aarch64-linux-gnu/12/include/stdarg.h \
   /usr/aarch64-linux-gnu/include/bits/types.h \
@@ -254,17 +191,9 @@ hal/CMakeFiles/hal.dir/src/joystick.c.o: /home/josh/cmpt433/work/as1/hal/src/joy
 
 /home/josh/cmpt433/work/as1/hal/include/hal/joystick.h:
 
-/usr/aarch64-linux-gnu/include/assert.h:
-
-/usr/aarch64-linux-gnu/include/asm-generic/ioctls.h:
-
-/usr/lib/gcc-cross/aarch64-linux-gnu/12/include/stdbool.h:
-
-/home/josh/cmpt433/work/as1/hal/include/hal/button.h:
-
-/home/josh/cmpt433/work/as1/hal/src/button.c:
-
 /usr/aarch64-linux-gnu/include/bits/types/locale_t.h:
+
+/usr/aarch64-linux-gnu/include/bits/types/struct_itimerspec.h:
 
 /usr/aarch64-linux-gnu/include/asm-generic/posix_types.h:
 
@@ -318,21 +247,11 @@ hal/CMakeFiles/hal.dir/src/joystick.c.o: /home/josh/cmpt433/work/as1/hal/src/joy
 
 /usr/aarch64-linux-gnu/include/bits/wordsize.h:
 
-/usr/aarch64-linux-gnu/include/stdc-predef.h:
-
-/home/josh/cmpt433/work/as1/hal/include/hal/LED.h:
-
-/usr/aarch64-linux-gnu/include/bits/pthreadtypes.h:
-
-/usr/aarch64-linux-gnu/include/sys/cdefs.h:
-
-/usr/aarch64-linux-gnu/include/bits/types/struct_timeval.h:
+/usr/aarch64-linux-gnu/include/gnu/stubs-lp64.h:
 
 /usr/aarch64-linux-gnu/include/features.h:
 
 /home/josh/cmpt433/work/as1/hal/src/LED.c:
-
-/usr/aarch64-linux-gnu/include/gnu/stubs-lp64.h:
 
 /home/josh/cmpt433/work/as1/hal/src/joystick.c:
 
@@ -344,9 +263,23 @@ hal/CMakeFiles/hal.dir/src/joystick.c.o: /home/josh/cmpt433/work/as1/hal/src/joy
 
 /usr/aarch64-linux-gnu/include/bits/types/sigset_t.h:
 
+/usr/aarch64-linux-gnu/include/stdc-predef.h:
+
+/home/josh/cmpt433/work/as1/hal/include/hal/LED.h:
+
+/usr/aarch64-linux-gnu/include/bits/pthreadtypes.h:
+
+/usr/aarch64-linux-gnu/include/sys/cdefs.h:
+
+/usr/aarch64-linux-gnu/include/bits/types/struct_timeval.h:
+
 /usr/aarch64-linux-gnu/include/bits/types/struct_tm.h:
 
 /usr/aarch64-linux-gnu/include/bits/time64.h:
+
+/usr/aarch64-linux-gnu/include/asm-generic/ioctls.h:
+
+/usr/lib/gcc-cross/aarch64-linux-gnu/12/include/stdbool.h:
 
 /usr/aarch64-linux-gnu/include/bits/stdint-uintn.h:
 
@@ -427,5 +360,3 @@ hal/CMakeFiles/hal.dir/src/joystick.c.o: /home/josh/cmpt433/work/as1/hal/src/joy
 /usr/aarch64-linux-gnu/include/asm-generic/types.h:
 
 /usr/aarch64-linux-gnu/include/bits/time.h:
-
-/usr/aarch64-linux-gnu/include/bits/types/struct_itimerspec.h:

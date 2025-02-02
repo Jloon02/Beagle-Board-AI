@@ -9,6 +9,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/josh/cmpt433/work/as1/app/src/main.c" "app/CMakeFiles/reaction_timer.dir/src/main.c.o" "gcc" "app/CMakeFiles/reaction_timer.dir/src/main.c.o.d"
+  "/home/josh/cmpt433/work/as1/app/src/reaction_game.c" "app/CMakeFiles/reaction_timer.dir/src/reaction_game.c.o" "gcc" "app/CMakeFiles/reaction_timer.dir/src/reaction_game.c.o.d"
+  "/home/josh/cmpt433/work/as1/app/src/time_functions.c" "app/CMakeFiles/reaction_timer.dir/src/time_functions.c.o" "gcc" "app/CMakeFiles/reaction_timer.dir/src/time_functions.c.o.d"
   )
 
 # Targets to which this target links.

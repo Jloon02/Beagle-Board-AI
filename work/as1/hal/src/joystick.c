@@ -12,6 +12,9 @@
 #include <linux/i2c-dev.h>
 #include <stdbool.h>
 
+static int i2c_file_desc = -1;
+static bool joystick_initialized = false;
+
 static int init_i2c_bus(char* bus, int address)
 {
 	int i2c_file_desc = open(bus, O_RDWR);
@@ -58,5 +61,52 @@ static uint16_t read_i2c_reg16(int i2c_file_desc, uint8_t reg_addr)
 		perror("Unable to read i2c register");
 		exit(EXIT_FAILURE);
 	}
-	return value;
+
+	// Convert byte order and shift bits into place
+    uint16_t new_value = ((value & 0xFF) << 8) | ((value & 0xFF00) >> 8);
+	return new_value >> 4;
+}
+
+void joystick_init(void) {
+	i2c_file_desc = init_i2c_bus(I2CDRV_LINUX_BUS, I2C_DEVICE_ADDRESS);
+	joystick_initialized = true;
+}
+
+void joystick_cleanup(void) {
+	if(!joystick_initialized) return;
+
+	close(i2c_file_desc);
+	i2c_file_desc = -1;
+	joystick_initialized = false;
+}
+
+static uint16_t read_joystick_position(uint16_t value) {
+	write_i2c_reg16(i2c_file_desc, REG_CONFIGURATION, value);
+    usleep(5000); // 5ms
+    return read_i2c_reg16(i2c_file_desc, REG_DATA);
+}
+
+// Taken from (https://stackoverflow.com/a/59320692)
+static float normalize_dir(int value, int min, int max) {
+	return ((float)(value - min) / (max-min)) * 100.0f;
+}
+
+JoystickDirection joystick_get_direction(void) {
+	if(!joystick_initialized) return JOYSTICK_NONE;
+
+	// Read X and Y axis
+	int y_axis = read_joystick_position(TLA2024_CHANNEL_Y_CONF_1);
+    int x_axis = read_joystick_position(TLA2024_CHANNEL_X_CONF_0);
+
+	float x_percent = normalize_dir(x_axis, JOYSTICK_X_MAX_LEFT, JOYSTICK_X_MAX_RIGHT);
+    float y_percent = normalize_dir(y_axis, JOYSTICK_Y_MAX_UP, JOYSTICK_Y_MAX_DOWN);
+
+	// Calculate which direction
+	if (y_percent >= 80.0f) return JOYSTICK_DOWN;
+    if (y_percent <= 20.0f) return JOYSTICK_UP;
+    if (x_percent <= 20.0f) return JOYSTICK_LEFT;
+    if (x_percent >= 80.0f) return JOYSTICK_RIGHT;
+
+
+    return JOYSTICK_NONE;
 }

@@ -3,20 +3,26 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <stdbool.h>
-
-// LED control file paths
-#define TRIGGER_FILE_NAME "/sys/class/leds/ACT/trigger"
-#define BRIGHTNESS_FILE_NAME "/sys/class/leds/ACT/brightness"
 
 static bool led_initialized = false;
 
 void led_init(void) {
+    led_set_brightness_green(0);
+    led_set_brightness_red(0);
     led_initialized = true;
 }
 
+void led_cleanup(void) {
+    if(!led_initialized) {
+        return;
+    }
+    led_set_brightness_green(0);
+    led_set_brightness_red(0);
+    led_initialized = false;
+}
 
-void set_led_trigger(const char *led_name, const char *trigger) {
+
+static void set_led_trigger(const char *trigger) {
     FILE *file = fopen(TRIGGER_FILE_NAME, "w");
 
     if (file == NULL) {
@@ -33,8 +39,8 @@ void set_led_trigger(const char *led_name, const char *trigger) {
     fclose(file);
 }
 
-void set_led_brightness(const char *led_name, int brightness) {
-    FILE *file = fopen(BRIGHTNESS_FILE_NAME, "w");
+static void set_led_brightness(const char *colour, int brightness) {
+    FILE *file = fopen(colour, "w");
 
     if (file == NULL) {
         perror("Error opening brightness file");
@@ -50,9 +56,12 @@ void set_led_brightness(const char *led_name, int brightness) {
     fclose(file);
 }
 
-void sleep_for(double seconds) {
-    struct timespec req;
-    req.tv_sec = (time_t)seconds;
-    req.tv_nsec = (seconds - req.tv_sec) * 1e9;
-    nanosleep(&req, NULL);
+void led_set_brightness_green(bool brightness) {
+    if(!led_initialized) return;
+    set_led_brightness(GREEN_BRIGHTNESS, brightness);
+}
+
+void led_set_brightness_red(bool brightness) {
+    if(!led_initialized) return;
+    set_led_brightness(RED_BRIGHTNESS, brightness);
 }

@@ -154,6 +154,54 @@ src/main.c.s:
 	cd /home/josh/cmpt433/work/as1/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/reaction_timer.dir/build.make app/CMakeFiles/reaction_timer.dir/src/main.c.s
 .PHONY : src/main.c.s
 
+src/reaction_game.o: src/reaction_game.c.o
+.PHONY : src/reaction_game.o
+
+# target to build an object file
+src/reaction_game.c.o:
+	cd /home/josh/cmpt433/work/as1/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/reaction_timer.dir/build.make app/CMakeFiles/reaction_timer.dir/src/reaction_game.c.o
+.PHONY : src/reaction_game.c.o
+
+src/reaction_game.i: src/reaction_game.c.i
+.PHONY : src/reaction_game.i
+
+# target to preprocess a source file
+src/reaction_game.c.i:
+	cd /home/josh/cmpt433/work/as1/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/reaction_timer.dir/build.make app/CMakeFiles/reaction_timer.dir/src/reaction_game.c.i
+.PHONY : src/reaction_game.c.i
+
+src/reaction_game.s: src/reaction_game.c.s
+.PHONY : src/reaction_game.s
+
+# target to generate assembly for a file
+src/reaction_game.c.s:
+	cd /home/josh/cmpt433/work/as1/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/reaction_timer.dir/build.make app/CMakeFiles/reaction_timer.dir/src/reaction_game.c.s
+.PHONY : src/reaction_game.c.s
+
+src/time_functions.o: src/time_functions.c.o
+.PHONY : src/time_functions.o
+
+# target to build an object file
+src/time_functions.c.o:
+	cd /home/josh/cmpt433/work/as1/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/reaction_timer.dir/build.make app/CMakeFiles/reaction_timer.dir/src/time_functions.c.o
+.PHONY : src/time_functions.c.o
+
+src/time_functions.i: src/time_functions.c.i
+.PHONY : src/time_functions.i
+
+# target to preprocess a source file
+src/time_functions.c.i:
+	cd /home/josh/cmpt433/work/as1/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/reaction_timer.dir/build.make app/CMakeFiles/reaction_timer.dir/src/time_functions.c.i
+.PHONY : src/time_functions.c.i
+
+src/time_functions.s: src/time_functions.c.s
+.PHONY : src/time_functions.s
+
+# target to generate assembly for a file
+src/time_functions.c.s:
+	cd /home/josh/cmpt433/work/as1/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/reaction_timer.dir/build.make app/CMakeFiles/reaction_timer.dir/src/time_functions.c.s
+.PHONY : src/time_functions.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -166,6 +214,12 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/reaction_game.o"
+	@echo "... src/reaction_game.i"
+	@echo "... src/reaction_game.s"
+	@echo "... src/time_functions.o"
+	@echo "... src/time_functions.i"
+	@echo "... src/time_functions.s"
 .PHONY : help
 
 
