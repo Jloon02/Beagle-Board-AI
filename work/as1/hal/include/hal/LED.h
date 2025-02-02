@@ -4,7 +4,6 @@
 #include <stdbool.h>
 
 // LED control file paths
-#define TRIGGER_FILE_NAME "/sys/class/leds/ACT/trigger"
 #define GREEN_BRIGHTNESS "/sys/class/leds/ACT/brightness"
 #define RED_BRIGHTNESS "/sys/class/leds/PWR/brightness"
 

@@ -21,24 +21,6 @@ void led_cleanup(void) {
     led_initialized = false;
 }
 
-
-static void set_led_trigger(const char *trigger) {
-    FILE *file = fopen(TRIGGER_FILE_NAME, "w");
-
-    if (file == NULL) {
-        perror("Error opening trigger file");
-        exit(EXIT_FAILURE);
-    }
-
-    if (fprintf(file, "%s", trigger) <= 0) {
-        perror("Error writing to trigger file");
-        fclose(file);
-        exit(EXIT_FAILURE);
-    }
-
-    fclose(file);
-}
-
 static void set_led_brightness(const char *colour, int brightness) {
     FILE *file = fopen(colour, "w");
 

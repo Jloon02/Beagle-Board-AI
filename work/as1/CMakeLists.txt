@@ -4,7 +4,7 @@ project(my_as1 VERSION 1.0 DESCRIPTION "Starter project" LANGUAGES C)
 
 # Compiler options (inherited by sub-folders)
 set(CMAKE_C_STANDARD 11)
-add_compile_options(-Wall -Wpedantic -Wextra)#-Werror )
+add_compile_options(-Wall -Wpedantic -Wextra -Werror )
 add_compile_options(-fdiagnostics-color)
 
 # Enable address sanitizer
