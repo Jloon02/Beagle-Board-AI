@@ -34,11 +34,6 @@ typedef enum {
     JOYSTICK_RIGHT
 } JoystickDirection;
 
-// static int init_i2c_bus(char* bus, int address);
-// static void write_i2c_reg16(int i2c_file_desc, uint8_t reg_addr, uint16_t value);
-// static uint16_t read_i2c_reg16(int i2c_file_desc, uint8_t reg_addr);
-// static uint16_t read_joystick_position(uint16_t value);
-
 void joystick_init(void);
 void joystick_cleanup(void);
 JoystickDirection joystick_get_direction(void);

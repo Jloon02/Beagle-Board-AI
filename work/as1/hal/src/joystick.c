@@ -1,6 +1,4 @@
-// TLA2024 Sample Code
-// - Configure DAC to continuously read an input channel on the BeagleY-AI
-// Reference Data Sheet: https://www.ti.com/lit/ds/symlink/tla2021.pdf
+// HAL module for controlling the joystick on BeagleBoard
 
 #include "hal/joystick.h"
 #include <stdio.h>

@@ -1,0 +1,26 @@
+app/CMakeFiles/reaction_timer.dir/src/time_functions.c.o: \
+ /home/josh/cmpt433/work/as1/app/src/time_functions.c \
+ /usr/aarch64-linux-gnu/include/stdc-predef.h \
+ /usr/aarch64-linux-gnu/include/time.h \
+ /usr/aarch64-linux-gnu/include/features.h \
+ /usr/aarch64-linux-gnu/include/features-time64.h \
+ /usr/aarch64-linux-gnu/include/bits/wordsize.h \
+ /usr/aarch64-linux-gnu/include/bits/timesize.h \
+ /usr/aarch64-linux-gnu/include/sys/cdefs.h \
+ /usr/aarch64-linux-gnu/include/bits/long-double.h \
+ /usr/aarch64-linux-gnu/include/gnu/stubs.h \
+ /usr/aarch64-linux-gnu/include/gnu/stubs-lp64.h \
+ /usr/lib/gcc-cross/aarch64-linux-gnu/12/include/stddef.h \
+ /usr/aarch64-linux-gnu/include/bits/time.h \
+ /usr/aarch64-linux-gnu/include/bits/types.h \
+ /usr/aarch64-linux-gnu/include/bits/typesizes.h \
+ /usr/aarch64-linux-gnu/include/bits/time64.h \
+ /usr/aarch64-linux-gnu/include/bits/types/clock_t.h \
+ /usr/aarch64-linux-gnu/include/bits/types/time_t.h \
+ /usr/aarch64-linux-gnu/include/bits/types/struct_tm.h \
+ /usr/aarch64-linux-gnu/include/bits/types/struct_timespec.h \
+ /usr/aarch64-linux-gnu/include/bits/endian.h \
+ /usr/aarch64-linux-gnu/include/bits/endianness.h \
+ /usr/aarch64-linux-gnu/include/bits/types/clockid_t.h \
+ /usr/aarch64-linux-gnu/include/bits/types/timer_t.h \
+ /usr/aarch64-linux-gnu/include/bits/types/struct_itimerspec.h

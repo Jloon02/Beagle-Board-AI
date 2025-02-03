@@ -1,4 +1,5 @@
-// Main game loop
+// Main reaction game loop
+
 #include "reaction_game.h"
 #include "time_functions.h"
 

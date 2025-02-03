@@ -1,4 +1,5 @@
 // File to include time ultility functions
+
 #define _POSIX_C_SOURCE 199309L // For clock time
 #include <time.h>
 

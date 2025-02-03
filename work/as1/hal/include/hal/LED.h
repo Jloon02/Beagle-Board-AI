@@ -4,12 +4,17 @@
 #include <stdbool.h>
 
 // LED control file paths
-#define GREEN_BRIGHTNESS "/sys/class/leds/ACT/brightness"
-#define RED_BRIGHTNESS "/sys/class/leds/PWR/brightness"
+#define GREEN_INDEX 0
+#define RED_INDEX 1
 
-// Function prototypes
-// static void set_led_trigger(const char *trigger);
-// static void set_led_brightness(const char *colour, int brightness);
+#define NUM_LEDS 2 // Red and Green
+
+typedef struct {
+    const char *colour;
+    const char *trigger_path;
+    const char *brightness_path;
+} LED;
+
 void led_init(void);
 void led_cleanup(void);
 void led_set_brightness_green(bool brightness);

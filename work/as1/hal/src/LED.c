@@ -1,3 +1,5 @@
+// HAL module for controlling the LED on BeagleBoard
+
 #include "hal/LED.h"
 
 #include <stdio.h>
@@ -6,23 +8,14 @@
 
 static bool led_initialized = false;
 
-void led_init(void) {
-    led_set_brightness_green(0);
-    led_set_brightness_red(0);
-    led_initialized = true;
-}
+static LED leds[NUM_LEDS] = {
+    {"Green", "/sys/class/leds/ACT/trigger", "/sys/class/leds/ACT/brightness"},
+    {"Red", "/sys/class/leds/PWR/trigger", "/sys/class/leds/PWR/brightness"}
+};
 
-void led_cleanup(void) {
-    if(!led_initialized) {
-        return;
-    }
-    led_set_brightness_green(0);
-    led_set_brightness_red(0);
-    led_initialized = false;
-}
-
-static void set_led_brightness(const char *colour, int brightness) {
-    FILE *file = fopen(colour, "w");
+// Write to brightness LED file
+static void write_led_brightness(int index, int brightness) {
+    FILE *file = fopen(leds[index].brightness_path, "w");
 
     if (file == NULL) {
         perror("Error opening brightness file");
@@ -38,12 +31,33 @@ static void set_led_brightness(const char *colour, int brightness) {
     fclose(file);
 }
 
+void led_init(void) {
+    // Turn off all lights
+    for(int i=0; i<NUM_LEDS; i++) {
+        write_led_brightness(i, 0);
+    }
+
+    led_initialized = true;
+}
+
+void led_cleanup(void) {
+    if(!led_initialized) {
+        return;
+    }
+    
+    for(int i=0; i<NUM_LEDS; i++) {
+        write_led_brightness(i, 0);
+    }
+
+    led_initialized = false;
+}
+
 void led_set_brightness_green(bool brightness) {
     if(!led_initialized) return;
-    set_led_brightness(GREEN_BRIGHTNESS, brightness);
+    write_led_brightness(GREEN_INDEX, brightness);
 }
 
 void led_set_brightness_red(bool brightness) {
     if(!led_initialized) return;
-    set_led_brightness(RED_BRIGHTNESS, brightness);
+    write_led_brightness(RED_INDEX, brightness);
 }
