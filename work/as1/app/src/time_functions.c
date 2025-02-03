@@ -3,7 +3,7 @@
 #define _POSIX_C_SOURCE 199309L // For clock time
 #include <time.h>
 
-long long getTimeInMs(void) {
+long long get_time_in_ms(void) {
 	struct timespec spec;
 	clock_gettime(CLOCK_REALTIME, &spec);
 	long long seconds = spec.tv_sec;
@@ -13,7 +13,7 @@ long long getTimeInMs(void) {
 	return milliSeconds;
 }
 
-void sleepForMs(long long delayInMs) {
+void sleep_for_ms(long long delayInMs) {
 	const long long NS_PER_MS = 1000 * 1000;
 	const long long NS_PER_SECOND = 1000000000;
 	long long delayNs = delayInMs * NS_PER_MS;
