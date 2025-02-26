@@ -3,8 +3,6 @@
 
 #include <stdio.h>
 #include <stdbool.h>
-#include "badmath.h"
-#include "hal/button.h"
 #include "draw_stuff.h"
 
 void foo() {
@@ -20,8 +18,6 @@ int main()
     printf("Hello world with LCD!\n");
 
     // Initialize all modules; HAL modules first
-    button_init();
-    badmath_init();
     DrawStuff_init();
 
     // Main program logic:
