@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <gpiod.h>
 #include <assert.h>
+#include <stdbool.h>
 
 // Relies on the gpiod library.
 // Insallation for cross compiling:

@@ -1,4 +1,4 @@
-#include "draw_stuff.h"
+#include "LCD.h"
 
 #include "DEV_Config.h"
 #include "LCD_1in54.h"
@@ -14,7 +14,7 @@
 static UWORD *s_fb;
 static bool isInitialized = false;
 
-void DrawStuff_init()
+void LCD_init()
 {
     assert(!isInitialized);
 
@@ -40,7 +40,8 @@ void DrawStuff_init()
     }
     isInitialized = true;
 }
-void DrawStuff_cleanup()
+
+void LCD_cleanup()
 {
     assert(isInitialized);
 
@@ -51,7 +52,7 @@ void DrawStuff_cleanup()
     isInitialized = false;
 }
 
-void DrawStuff_updateScreen(char* message)
+void LCD_updateScreen(char* message)
 {
     assert(isInitialized);
 

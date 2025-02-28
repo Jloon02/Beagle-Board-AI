@@ -3,9 +3,35 @@
 
 #include <stdio.h>
 #include <stdbool.h>
-#include "draw_stuff.h"
+#include "LCD.h"
+#include "sampler.h"
+#include "udp_server.h"
+#include "timeFunction.h"
+#include "terminal_output.h"
+#include "periodTimer.h"
+#include "hal/light_detector.h"
 
 int main() {
+    Period_init();
+    Sampler_init();
+    LightDetector_init();
+    UdpServer_start();
+    TerminalOutput_init();
+    //LCD_init();
+
+    while(UdpServer_isOnline()) {
+        Sampler_moveCurrentDataToHistory();
+        sleep_for_ms(1000);
+    }
+
+    //LCD_cleanup();
+    TerminalOutput_cleanup();
+    UdpServer_stop();
+    LightDetector_cleanup();
+    Sampler_cleanup();
+    Period_cleanup();
+
+    printf("Program completely successfully.\n");
     return 0;
 }
 

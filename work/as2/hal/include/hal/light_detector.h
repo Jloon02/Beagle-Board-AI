@@ -1,6 +1,7 @@
 // adcLightSensor.h
 // Detect light senor via ADC over the I2C
-// These set of methods provides ADC value
+// These set of methods provides ADC value and converts them into Voltage
+// Runs on a thread to continuously read light level
 
 #ifndef _LIGHTDETECTOR_H_
 #define _LIGHTDETECTOR_H_

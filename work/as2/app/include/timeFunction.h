@@ -1,3 +1,6 @@
+// timeFunction.h
+// Provides utility functions for time in Linux
+
 #ifndef _TIME_FUCNTIONS_H
 #define _TIME_FUCNTIONS_H
 

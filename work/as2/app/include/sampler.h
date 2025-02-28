@@ -40,4 +40,7 @@ double Sampler_getAverageReading(void);
 
 // Get the total number of light level samples taken so far.
 long long Sampler_getNumSamplesTaken(void);
+
+// Count and return the number of dips of V in the history
+int Sample_getDipsCount(void);
 #endif

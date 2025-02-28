@@ -78,6 +78,7 @@ static uint16_t read_i2c_reg16(int i2c_file_desc, uint8_t reg_addr)
 
 static void* lightDetectorThreadFunc(void *none) {
 	assert(detectorInitialized);
+	(void)none; // Suppress unused parameter warning
 
 	while(isThreadRunning) {
 		// Read from the Light detector

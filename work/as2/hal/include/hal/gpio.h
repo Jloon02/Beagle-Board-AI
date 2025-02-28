@@ -3,7 +3,6 @@
 #define _GPIO_H_
 
 // GPIO files are responsible for detecting the rotary encoder's movement in this case
-#include <stdbool.h>
 #include <gpiod.h>
 
 // Opaque structure
