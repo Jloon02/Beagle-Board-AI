@@ -17,7 +17,6 @@
 #define UDP_PORT 12345
 #define BUFFER_SIZE 1024 // Ethernet is 1500 byte packet
 #define MAX_ETHERNET_BYTES 1500
-#define MAX_RESPONSE_LENGTH 100 // For testing purposes
 
 // Global variables
 static pthread_t udpThread;
@@ -95,22 +94,6 @@ static void handleCommand(int sockfd, struct sockaddr_in *clientAddr, socklen_t 
             return;
         }
 
-        // if (history != NULL) {
-        //     char historyMessage[BUFFER_SIZE];
-        //     int offset = 0;
-
-        //     // Split out history data
-        //     for (int i = 0; i < size; i++) {
-        //         offset += snprintf(historyMessage + offset, BUFFER_SIZE - offset, "%.3f, ", history[i]);
-
-        //         // line contains 10 data points
-        //         if ((i + 1) % 10 == 0 || i == size - 1) {
-        //             offset += snprintf(historyMessage + offset, BUFFER_SIZE - offset, "\n");
-        //         }
-        //     }
-
-        // }
-
         char historyResponse[MAX_ETHERNET_BYTES];
         int responseDisplace = 0;
         for (int i = 0; i < size; i++) {
@@ -133,10 +116,6 @@ static void handleCommand(int sockfd, struct sockaddr_in *clientAddr, socklen_t 
                 sendto(sockfd, historyResponse, strlen(historyResponse), 0, (struct sockaddr *)clientAddr, addrLen);
                 responseDisplace = 0; // Reset position
             }
-            //strncat(response, temp, BUFFER_SIZE - strlen(response) - 1);
-            // if ((i + 1) % 10 == 0) {
-            //     strncat(response, "\n", BUFFER_SIZE - strlen(response) - 1);
-            // }
         }
 
         if (responseDisplace > 0 && historyResponse[responseDisplace-1] != '\n') {

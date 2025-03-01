@@ -1,0 +1,379 @@
+josh@433-debian:~/cmpt433/work/noworky$ gdb-multiarch noworky
+GNU gdb (Debian 13.1-3) 13.1
+Copyright (C) 2023 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from noworky...
+(gdb) target remote 192.168.7.2:2001
+Remote debugging using 192.168.7.2:2001
+Reading /lib/ld-linux-aarch64.so.1 from remote target...
+warning: File transfers from remote targets can be slow. Use "set sysroot" to access files locally instead.
+Reading /lib/ld-linux-aarch64.so.1 from remote target...
+Reading symbols from target:/lib/ld-linux-aarch64.so.1...
+Reading /usr/lib/debug/.build-id/5b/b03d5dd46336e4dbc6decc67c224ca216d966b.debug from remote target...
+Reading /usr/lib/debug/.build-id/5b/b03d5dd46336e4dbc6decc67c224ca216d966b.debug from remote target...
+Reading symbols from target:/usr/lib/debug/.build-id/5b/b03d5dd46336e4dbc6decc67c224ca216d966b.debug...
+Reading /usr/lib/debug/.build-id/9f/edaa477ae4a3b43e143073860e7e7670f799fa.debug from remote target...
+_start () at ../sysdeps/aarch64/dl-start.S:22
+22	../sysdeps/aarch64/dl-start.S: No such file or directory.
+(gdb) break main
+Breakpoint 1 at 0xaaaaaaaa097c: file noworky.c, line 51.
+(gdb) list
+17	in ../sysdeps/aarch64/dl-start.S
+(gdb) print
+The history is empty.
+(gdb) info break
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x0000aaaaaaaa097c in main at noworky.c:51
+(gdb) bt
+#0  _start () at ../sysdeps/aarch64/dl-start.S:22
+#1  0x0000000000000000 in ?? ()
+Backtrace stopped: previous frame identical to this frame (corrupt stack?)
+(gdb) step
+_start () at ../sysdeps/aarch64/dl-start.S:25
+25	in ../sysdeps/aarch64/dl-start.S
+(gdb) next
+26	in ../sysdeps/aarch64/dl-start.S
+(gdb) next
+28	in ../sysdeps/aarch64/dl-start.S
+(gdb) break 50
+Breakpoint 2 at 0xfffff7fd8b80: file ../sysdeps/aarch64/dl-start.S, line 51.
+(gdb) continue
+Continuing.
+Reading /lib/aarch64-linux-gnu/libc.so.6 from remote target...
+Reading /usr/lib/debug/.build-id/76/f78efc64d66285367e8d3426b6ffa3b5bc8912.debug from remote target...
+Reading /usr/lib/debug/.build-id/76/f78efc64d66285367e8d3426b6ffa3b5bc8912.debug from remote target...
+
+Breakpoint 2, _start () at ../sysdeps/aarch64/dl-start.S:51
+51	in ../sysdeps/aarch64/dl-start.S
+(gdb) frame
+#0  _start () at ../sysdeps/aarch64/dl-start.S:51
+51	in ../sysdeps/aarch64/dl-start.S
+(gdb) frame
+#0  _start () at ../sysdeps/aarch64/dl-start.S:51
+51	in ../sysdeps/aarch64/dl-start.S
+(gdb) list
+46	in ../sysdeps/aarch64/dl-start.S
+(gdb) continue
+Continuing.
+
+Breakpoint 1, main () at noworky.c:51
+51		printf("noworky: by Brian Fraser\n");
+(gdb) next
+54		source = malloc(sizeof(*source) * NUM_ELEMENTS);
+(gdb) next
+55		target = malloc(sizeof(*target) * NUM_ELEMENTS);
+(gdb) next
+57		if (!source || !target) {
+(gdb) bt
+#0  main () at noworky.c:57
+(gdb) print
+The history is empty.
+(gdb) p source
+$1 = (double *) 0xaaaaaaac16b0
+(gdb) info breakpoints
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x0000aaaaaaaa097c in main at noworky.c:51
+	breakpoint already hit 1 time
+2       breakpoint     keep y   0x0000fffff7fd8b80 in _start 
+                                                   at ../sysdeps/aarch64/dl-start.S:51
+	breakpoint already hit 1 time
+(gdb) delete 2
+(gdb) info breakpoints
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x0000aaaaaaaa097c in main at noworky.c:51
+	breakpoint already hit 1 time
+(gdb) info local
+i = 0
+source = 0xaaaaaaac16b0
+target = 0xaaaaaaac1710
+(gdb) info frame
+Stack level 0, frame at 0xfffffffff340:
+ pc = 0xaaaaaaaa09a0 in main (noworky.c:57); saved pc = 0xfffff7e27740
+ source language c.
+ Arglist at 0xfffffffff310, args: 
+ Locals at 0xfffffffff310, Previous frame's sp is 0xfffffffff340
+ Saved registers:
+  x29 at 0xfffffffff310, x30 at 0xfffffffff318
+(gdb) line
+Undefined command: "line".  Try "help".
+(gdb) list
+52	
+53		// Allocate the arrays:
+54		source = malloc(sizeof(*source) * NUM_ELEMENTS);
+55		target = malloc(sizeof(*target) * NUM_ELEMENTS);
+56	
+57		if (!source || !target) {
+58			printf("ERROR: Allocation failed.\n");
+59		}
+60	
+61		// Initialize the arrays
+(gdb) next
+62		for (i=0; i < NUM_ELEMENTS; i++) {
+(gdb) info args
+No arguments.
+(gdb) info local
+i = 0
+source = 0xaaaaaaac16b0
+target = 0xaaaaaaac1710
+(gdb) next
+63			source[i] = i * 2.0;
+(gdb) list
+58			printf("ERROR: Allocation failed.\n");
+59		}
+60	
+61		// Initialize the arrays
+62		for (i=0; i < NUM_ELEMENTS; i++) {
+63			source[i] = i * 2.0;
+64			target[i] = i * 10.0;
+65		}
+66	
+67		// Display them
+(gdb) break
+Breakpoint 3 at 0xaaaaaaaa09cc: file noworky.c, line 63.
+(gdb) info local
+i = 0
+source = 0xaaaaaaac16b0
+target = 0xaaaaaaac1710
+(gdb) c
+Continuing.
+
+Breakpoint 3, main () at noworky.c:63
+63			source[i] = i * 2.0;
+(gdb) c
+Continuing.
+
+Breakpoint 3, main () at noworky.c:63
+63			source[i] = i * 2.0;
+(gdb) c
+Continuing.
+
+Breakpoint 3, main () at noworky.c:63
+63			source[i] = i * 2.0;
+(gdb) info local
+i = 3
+source = 0xaaaaaaac16b0
+target = 0xaaaaaaac1710
+(gdb) info breakpoints
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x0000aaaaaaaa097c in main at noworky.c:51
+	breakpoint already hit 1 time
+3       breakpoint     keep y   0x0000aaaaaaaa09cc noworky.c:63
+	breakpoint already hit 3 times
+(gdb) delete 3
+(gdb) next
+64			target[i] = i * 10.0;
+(gdb) next
+62		for (i=0; i < NUM_ELEMENTS; i++) {
+(gdb) break 68
+Breakpoint 4 at 0xaaaaaaaa0a28: file noworky.c, line 68.
+(gdb) c
+Continuing.
+
+Breakpoint 4, main () at noworky.c:68
+68		printf("Initial values: \n");
+(gdb) next
+69		displayArrays(source, target, NUM_ELEMENTS);
+(gdb) step
+displayArrays (source=0xaaaaaaac16b0, target=0xaaaaaaac1710, size=10)
+    at noworky.c:39
+39	    for (i=0; i < size; i++) {
+(gdb) next
+40			printf("%3d: %05.1f --> %05.1f\n", i, source[i], target[i]);
+(gdb) break
+Breakpoint 5 at 0xaaaaaaaa0910: file noworky.c, line 40.
+(gdb) info local
+i = 0
+(gdb) c
+Continuing.
+
+Breakpoint 5, displayArrays (source=0xaaaaaaac16b0, target=0xaaaaaaac1710, 
+    size=10) at noworky.c:40
+40			printf("%3d: %05.1f --> %05.1f\n", i, source[i], target[i]);
+(gdb) c
+Continuing.
+
+Breakpoint 5, displayArrays (source=0xaaaaaaac16b0, target=0xaaaaaaac1710, 
+    size=10) at noworky.c:40
+40			printf("%3d: %05.1f --> %05.1f\n", i, source[i], target[i]);
+(gdb) c
+Continuing.
+
+Breakpoint 5, displayArrays (source=0xaaaaaaac16b0, target=0xaaaaaaac1710, 
+    size=10) at noworky.c:40
+40			printf("%3d: %05.1f --> %05.1f\n", i, source[i], target[i]);
+(gdb) info local
+i = 3
+(gdb) break 41
+Breakpoint 6 at 0xaaaaaaaa0964: file noworky.c, line 42.
+(gdb) info breakpoints
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x0000aaaaaaaa097c in main at noworky.c:51
+	breakpoint already hit 1 time
+4       breakpoint     keep y   0x0000aaaaaaaa0a28 in main at noworky.c:68
+	breakpoint already hit 1 time
+5       breakpoint     keep y   0x0000aaaaaaaa0910 noworky.c:40
+	breakpoint already hit 3 times
+6       breakpoint     keep y   0x0000aaaaaaaa0964 in displayArrays 
+                                                   at noworky.c:42
+(gdb) delete 5
+(gdb) c
+Continuing.
+
+Breakpoint 6, displayArrays (source=0xaaaaaaac16b0, target=0xaaaaaaac1710, 
+    size=10) at noworky.c:42
+42	}
+(gdb) info local
+i = 10
+(gdb) break 71
+Breakpoint 7 at 0xaaaaaaaa0a44: file noworky.c, line 72.
+(gdb) c
+Continuing.
+
+Breakpoint 7, main () at noworky.c:72
+72		tradeArrays(source, target, NUM_ELEMENTS);
+(gdb) list
+67		// Display them
+68		printf("Initial values: \n");
+69		displayArrays(source, target, NUM_ELEMENTS);
+70	
+71		// Swap their contents
+72		tradeArrays(source, target, NUM_ELEMENTS);
+73	
+74		// Display them
+75		printf("Final values: \n");
+76		displayArrays(source, target, NUM_ELEMENTS);
+(gdb) step
+tradeArrays (array1=0xaaaaaaac16b0, array2=0xaaaaaaac1710, size=10)
+    at noworky.c:28
+28		for (i = size-1; i >= 0; i--) {
+(gdb) list
+23	 * Swap the contents of the two arrays.
+24	 */
+25	void tradeArrays(double *array1, double *array2, int size)
+26	{
+27		unsigned int i;
+28		for (i = size-1; i >= 0; i--) {
+29			swapContent(array1+i, array2+i);
+30		}
+31	}
+32	
+(gdb) break 29
+Breakpoint 8 at 0xaaaaaaaa08b4: file noworky.c, line 29.
+(gdb) c
+Continuing.
+
+Breakpoint 8, tradeArrays (array1=0xaaaaaaac16b0, array2=0xaaaaaaac1710, 
+    size=10) at noworky.c:29
+29			swapContent(array1+i, array2+i);
+(gdb) info local
+i = 9
+(gdb) c
+Continuing.
+
+Breakpoint 8, tradeArrays (array1=0xaaaaaaac16b0, array2=0xaaaaaaac1710, 
+    size=10) at noworky.c:29
+29			swapContent(array1+i, array2+i);
+(gdb) c
+Continuing.
+
+Breakpoint 8, tradeArrays (array1=0xaaaaaaac16b0, array2=0xaaaaaaac1710, 
+    size=10) at noworky.c:29
+29			swapContent(array1+i, array2+i);
+(gdb) c
+Continuing.
+
+Breakpoint 8, tradeArrays (array1=0xaaaaaaac16b0, array2=0xaaaaaaac1710, 
+    size=10) at noworky.c:29
+29			swapContent(array1+i, array2+i);
+(gdb) c
+Continuing.
+
+Breakpoint 8, tradeArrays (array1=0xaaaaaaac16b0, array2=0xaaaaaaac1710, 
+    size=10) at noworky.c:29
+29			swapContent(array1+i, array2+i);
+(gdb) c
+Continuing.
+
+Breakpoint 8, tradeArrays (array1=0xaaaaaaac16b0, array2=0xaaaaaaac1710, 
+    size=10) at noworky.c:29
+29			swapContent(array1+i, array2+i);
+(gdb) list local
+Function "local" not defined.
+(gdb) info local
+i = 4
+(gdb) c
+Continuing.
+
+Breakpoint 8, tradeArrays (array1=0xaaaaaaac16b0, array2=0xaaaaaaac1710, 
+    size=10) at noworky.c:29
+29			swapContent(array1+i, array2+i);
+(gdb) c
+Continuing.
+
+Breakpoint 8, tradeArrays (array1=0xaaaaaaac16b0, array2=0xaaaaaaac1710, 
+    size=10) at noworky.c:29
+29			swapContent(array1+i, array2+i);
+(gdb) c
+Continuing.
+
+Breakpoint 8, tradeArrays (array1=0xaaaaaaac16b0, array2=0xaaaaaaac1710, 
+    size=10) at noworky.c:29
+29			swapContent(array1+i, array2+i);
+(gdb) info local
+i = 1
+(gdb) c
+Continuing.
+
+Breakpoint 8, tradeArrays (array1=0xaaaaaaac16b0, array2=0xaaaaaaac1710, 
+    size=10) at noworky.c:29
+29			swapContent(array1+i, array2+i);
+(gdb) info local
+i = 0
+(gdb) c
+Continuing.
+
+Breakpoint 8, tradeArrays (array1=0xaaaaaaac16b0, array2=0xaaaaaaac1710, 
+    size=10) at noworky.c:29
+29			swapContent(array1+i, array2+i);
+(gdb) info local
+i = 4294967295
+(gdb) c
+Continuing.
+
+Program received signal SIGSEGV, Segmentation fault.
+0x0000aaaaaaaa0864 in swapContent (d1=0xaab2aaac16a8, d2=0xaab2aaac1708)
+    at noworky.c:17
+17		double tmp = *d2;
+(gdb) info args
+d1 = 0xaab2aaac16a8
+d2 = 0xaab2aaac1708
+(gdb) info local
+tmp = 0
+(gdb) info frame
+Stack level 0, frame at 0xfffffffff2d0:
+ pc = 0xaaaaaaaa0864 in swapContent (noworky.c:17); saved pc = 0xaaaaaaaa08e0
+ called by frame at 0xfffffffff310
+ source language c.
+ Arglist at 0xfffffffff2b0, args: d1=0xaab2aaac16a8, d2=0xaab2aaac1708
+ Locals at 0xfffffffff2b0, Previous frame's sp is 0xfffffffff2d0
+(gdb) next
+
+Program terminated with signal SIGSEGV, Segmentation fault.
+The program no longer exists.
+(gdb) c
+The program is not being run.
+(gdb) quit
+josh@433-debian:~/cmpt433/work/noworky$ 
+

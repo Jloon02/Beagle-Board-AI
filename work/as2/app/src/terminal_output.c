@@ -4,6 +4,7 @@
 #include "timeFunction.h"
 #include "sampler.h"
 #include "periodTimer.h"
+#include "hal/emitter.h"
 #include <stdio.h>
 #include <pthread.h>
 #include <unistd.h>
@@ -31,7 +32,7 @@ static void* printThreadFunc(void* none) {
 
         // Get information to display
         int historySize = Sampler_getHistorySize();
-        int pwmFrequency = 10;  // TODO: replace with pwm function @Nelson
+        int pwmFrequency = Emitter_get_frequency();
         double averageLightLevel = Sampler_getAverageReading();
         int dips = Sample_getDipsCount();
 
