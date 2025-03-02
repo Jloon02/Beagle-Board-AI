@@ -15,8 +15,6 @@
 #include <stdint.h>
 #include <time.h>
 
-//#define _POSIX_C_SOURCE 199309L // For clock time
-
 static int i2c_file_desc = -1;
 static bool detectorInitialized = false;
 static bool isThreadRunning = false;
@@ -47,9 +45,10 @@ static void write_i2c_reg16(int i2c_file_desc, uint8_t reg_addr, uint16_t value)
 	buff[0] = reg_addr;
 	buff[1] = (value & 0xFF);
 	buff[2] = (value & 0xFF00) >> 8;
+
 	int bytes_written = write(i2c_file_desc, buff, tx_size);
 	if (bytes_written != tx_size) {
-		perror("Unable to write i2c register");
+		perror("Unable to write i2c register line 56");
 		exit(EXIT_FAILURE);
 	}
 }
@@ -57,17 +56,19 @@ static void write_i2c_reg16(int i2c_file_desc, uint8_t reg_addr, uint16_t value)
 static uint16_t read_i2c_reg16(int i2c_file_desc, uint8_t reg_addr)
 {
 	// To read a register, must first write the address
-	int bytes_written = write(i2c_file_desc, &reg_addr, sizeof(reg_addr));
+	// Debugging the write step
+    int bytes_written = write(i2c_file_desc, &reg_addr, sizeof(reg_addr));
 	if (bytes_written != sizeof(reg_addr)) {
-		perror("Unable to write i2c register.");
+		perror("Unable to write i2c register line 70");
 		exit(EXIT_FAILURE);
 	}
 
 	// Now read the value and return it
 	uint16_t value = 0;
 	int bytes_read = read(i2c_file_desc, &value, sizeof(value));
+
 	if (bytes_read != sizeof(value)) {
-		perror("Unable to read i2c register");
+		perror("Unable to read i2c register :()");
 		exit(EXIT_FAILURE);
 	}
 
@@ -112,11 +113,15 @@ void LightDetector_cleanup(void) {
 	assert(detectorInitialized);
 
 	isThreadRunning = false;
-	i2c_file_desc = -1;
-
-	close(i2c_file_desc);
-	pthread_cancel(detectorThread);
+	// We must join the thread before we close i2c, or else possible errors can occur like
+	// "unable to write i2c..."
 	pthread_join(detectorThread, NULL);
+	if (i2c_file_desc >= 0) {
+		close(i2c_file_desc);
+		i2c_file_desc = -1;
+	}
+	// Cancel was causing the weird dynamic stack overflow error
+	// pthread_cancel(detectorThread);
 
 	pthread_mutex_destroy(&detectorMutex);
 	detectorInitialized = false;

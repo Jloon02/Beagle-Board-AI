@@ -14,12 +14,6 @@
 
 #include <stdbool.h>
 
-// Define a callback type for updating the LCD
-// A callback is a function that is passed as an argument to another function, 
-// and it's executed at a later time, often when some event or condition occurs. 
-typedef void (*UpdateLCDCallback)(int frequency);
-void set_update_lcd_callback(UpdateLCDCallback callback);
-
 void Emitter_init(void);
 void Emitter_cleanup(void);
 int Emitter_get_frequency(void);

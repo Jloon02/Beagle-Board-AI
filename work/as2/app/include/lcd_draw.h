@@ -11,13 +11,13 @@
 void Lcd_draw_init();
 void Lcd_draw_cleanup();
 
-// Functions to update the important values
-void lcd_draw_updateFrequency(int frequency);
-void lcd_draw_updateDips(int dips);
-void lcd_draw_updateMs(float ms);
+// // Functions to update the important values
+// void lcd_draw_updateFrequency(int frequency);
+// void lcd_draw_updateDips(int dips);
+// void lcd_draw_updateMs(float ms);
 
 // update screen auto is to refresh the screen when values change
-void lcd_draw_updateScreenAuto(void);
-void lcd_draw_updateScreen(char* message);
+// void lcd_draw_updateScreenAuto(void);
+// void lcd_draw_updateScreen(char* message);
 
 #endif

@@ -19,8 +19,6 @@ static bool is_1hz_flashing = false;  // Flag to control 1 Hz flashing
 static pthread_t flashing_thread;     // Thread for 1 Hz flashing
 static int current_frequency = 10;
 
-static UpdateLCDCallback update_lcd_callback = NULL;
-
 static pthread_mutex_t frequency_mutex;
 
 static void default_flashing(void) 
@@ -30,12 +28,7 @@ static void default_flashing(void)
     write_file(period, DEFAULT_PERIOD);
     write_file(duty_cycle, DUTY_CYCLE);
     write_file(enable, "1");
-    printf("Current frequency: %d Hz\n", current_frequency);
-}
-
-void set_update_lcd_callback(UpdateLCDCallback callback)
-{
-    update_lcd_callback = callback;
+    // printf("Current frequency: %d Hz\n", current_frequency);
 }
 
 int Emitter_get_frequency(void)
@@ -60,8 +53,8 @@ void Emitter_cleanup(void)
 {
     assert(is_initialized);
     write_file(enable, 0);
-    is_initialized = false;
     pthread_mutex_destroy(&frequency_mutex);
+    is_initialized = false;
 }
 
 void stop_1hz_flashing(void)
@@ -80,15 +73,11 @@ void Emitter_increment_flashing(void)
         current_frequency++;
     }
 
-    if (update_lcd_callback) {
-        update_lcd_callback(current_frequency);
-    }
-
     write_file(enable, "1");
 
     // Calculate the new period in nanoseconds (1 / frequency in Hz)
     long new_period = (1000000000L / current_frequency);  // Period in nanoseconds
-    printf("Current frequency: %d Hz\n", current_frequency);
+    // printf("Current frequency: %d Hz\n", current_frequency);
     pthread_mutex_unlock(&frequency_mutex);
 
     // Update the period (time for one complete cycle)
@@ -110,10 +99,6 @@ void Emitter_decrement_flashing(void)
     // Decrement frequency, allow it to reach 0 Hz
     if (current_frequency > 0) {
         current_frequency--;  // Decrease frequency by 1 Hz
-    }
-
-    if (update_lcd_callback) {
-        update_lcd_callback(current_frequency);
     }
 
     // If frequency is 0, stop the flashing (set period to 0, disable output)
@@ -140,7 +125,7 @@ void Emitter_decrement_flashing(void)
     }
     pthread_mutex_unlock(&frequency_mutex);
 
-    printf("Current frequency: %d Hz\n", current_frequency);
+    // printf("Current frequency: %d Hz\n", current_frequency);
 }
 
 void write_file(const char* file, const char* value)

@@ -31,26 +31,21 @@ int main()
     LightDetector_init();
     UdpServer_start();
     TerminalOutput_init();
+    
 
     while(UdpServer_isOnline()) {
         Sampler_moveCurrentDataToHistory();
         sleep_for_ms(1000);
-        printf("a\n");
     }
 
-
     printf("Cleaning up modules.\n");
-    printf("Terminal\n");
     TerminalOutput_cleanup();
-    printf("starting\n");
     UdpServer_stop();
     LightDetector_cleanup();
     Sampler_cleanup();
-    printf("Halfway\n");
     Rotary_encoder_cleanup();
     Lcd_draw_cleanup();
     Period_cleanup();
-    printf("almost\n");
     Emitter_cleanup();
     Gpio_cleanup();
     
