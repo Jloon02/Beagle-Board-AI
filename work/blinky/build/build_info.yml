@@ -1,0 +1,45 @@
+cmake:
+  application:
+    configuration-dir: /home/josh/cmpt433/work/blinky
+    source-dir: /home/josh/cmpt433/work/blinky
+  board:
+    name: beagley_ai
+    path:
+     - /home/josh/zephyrproject/zephyr/boards/beagle/beagley_ai
+    qualifiers: j722s/mcu_r5f0_0
+    revision: 
+  devicetree:
+    bindings-dirs:
+     - /home/josh/zephyrproject/zephyr/dts/bindings
+    files:
+     - /home/josh/zephyrproject/zephyr/boards/beagle/beagley_ai/beagley_ai_j722s_mcu_r5f0_0.dts
+     - /home/josh/cmpt433/work/blinky/boards/beagley_ai_j722s_mcu_r5f0_0.overlay
+    include-dirs:
+     - /home/josh/zephyrproject/zephyr/include
+     - /home/josh/zephyrproject/zephyr/include/zephyr
+     - /home/josh/zephyrproject/zephyr/dts/common
+     - /home/josh/zephyrproject/zephyr/dts/x86
+     - /home/josh/zephyrproject/zephyr/dts/xtensa
+     - /home/josh/zephyrproject/zephyr/dts/sparc
+     - /home/josh/zephyrproject/zephyr/dts/riscv
+     - /home/josh/zephyrproject/zephyr/dts/posix
+     - /home/josh/zephyrproject/zephyr/dts/nios2
+     - /home/josh/zephyrproject/zephyr/dts/arm64
+     - /home/josh/zephyrproject/zephyr/dts/arm
+     - /home/josh/zephyrproject/zephyr/dts/arc
+     - /home/josh/zephyrproject/zephyr/dts
+    user-files:
+     - /home/josh/cmpt433/work/blinky/boards/beagley_ai_j722s_mcu_r5f0_0.overlay
+  kconfig:
+    files:
+     - /home/josh/zephyrproject/zephyr/boards/beagle/beagley_ai/beagley_ai_j722s_mcu_r5f0_0_defconfig
+     - /home/josh/cmpt433/work/blinky/prj.conf
+    user-files:
+     - /home/josh/cmpt433/work/blinky/prj.conf
+  toolchain:
+    name: zephyr
+    path: /home/josh/zephyr-sdk-0.17.0
+  zephyr:
+    version: 4.1.99
+    zephyr-base: /home/josh/zephyrproject/zephyr
+version: 0.1.0

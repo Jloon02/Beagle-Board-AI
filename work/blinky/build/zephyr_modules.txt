@@ -1,0 +1,4 @@
+"cmsis":"/home/josh/zephyrproject/modules/hal/cmsis":"${ZEPHYR_CMSIS_CMAKE_DIR}"
+"ti":"/home/josh/zephyrproject/modules/hal/ti":"/home/josh/zephyrproject/modules/hal/ti"
+"libmetal":"/home/josh/zephyrproject/modules/hal/libmetal":"/home/josh/zephyrproject/modules/hal/libmetal"
+"open-amp":"/home/josh/zephyrproject/modules/lib/open-amp":"/home/josh/zephyrproject/modules/lib/open-amp"
